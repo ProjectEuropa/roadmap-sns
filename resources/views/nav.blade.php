@@ -17,8 +17,14 @@
     @endguest
 
     @auth
-    <li class="nav-item">
+    <li class="nav-item border-left border-right">
       <a class="nav-link" href=""><i class="fas fa-pen mr-1"></i>投稿する</a>
+    </li>
+    @endauth
+
+    @auth
+    <li class="nav-item border-right">
+      <a class="nav-link" href=""><i class="fab fa-trello mr-1"></i>私のロードマップ</a>
     </li>
     @endauth
 
@@ -33,6 +39,16 @@
         <button class="dropdown-item" type="button"
                 onclick="location.href=''">
           マイページ
+        </button>
+        <div class="dropdown-divider"></div>
+        <button class="dropdown-item" type="button"
+                onclick="location.href=''">
+          お気に入り教材
+        </button>
+        <div class="dropdown-divider"></div>
+        <button class="dropdown-item" type="button"
+                onclick="location.href=''">
+          完了した教材
         </button>
         <div class="dropdown-divider"></div>
         <button form="logout-button" class="dropdown-item" type="submit">
