@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand navbar-dark teal accent-4">
 
-  <a class="navbar-brand" href="/"><i class="fas fa-map-signs mr-1"></i></i>Roadmap</a>
+  <a class="navbar-brand" href="/"><i class="fas fa-map-signs mr-1"></i></i>RoadmapSNS</a>
 
   <ul class="navbar-nav ml-auto">
 
