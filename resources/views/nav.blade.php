@@ -1,21 +1,28 @@
-<nav class="navbar navbar-expand navbar-dark blue-gradient">
+<nav class="navbar navbar-expand navbar-dark teal accent-4">
 
-  <a class="navbar-brand" href="/"><i class="fas fa-map-signs mr-1"></i></i>Roadmap</a>
+  <a class="navbar-brand" href="/"><i class="fas fa-map-signs mr-1"></i></i>RoadmapSNS</a>
 
   <ul class="navbar-nav ml-auto">
 
+    @guest
     <li class="nav-item">
-      <a class="nav-link" href="">ユーザー登録</a>
+      <a class="nav-link" href="{{ route('register') }}">アカウント登録</a>
     </li>
+    @endguest
 
+    @guest
     <li class="nav-item">
       <a class="nav-link" href="">ログイン</a>
     </li>
+    @endguest
 
+    @auth
     <li class="nav-item">
       <a class="nav-link" href=""><i class="fas fa-pen mr-1"></i>投稿する</a>
     </li>
+    @endauth
 
+    @auth
     <!-- Dropdown -->
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
@@ -33,9 +40,11 @@
         </button>
       </div>
     </li>
-    <form id="logout-button" method="POST" action="">
+    <form id="logout-button" method="POST" action="{{ route('logout') }}">
+    @csrf
     </form>
     <!-- Dropdown -->
+    @endauth
 
   </ul>
 
