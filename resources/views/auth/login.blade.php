@@ -34,6 +34,10 @@
 
               </form>
 
+                <button onclick="location.href='/login/guest'" class="btn btn-block secondary-color text-white  font-weight-bold mt-2 mb-2" type="submit">
+               ゲストログイン
+                </button>
+
               <div class="mt-0">
                 <a href="{{ route('register') }}" class="card-text">アカウント登録はこちら</a>
               </div>
