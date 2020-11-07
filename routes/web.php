@@ -14,3 +14,5 @@
 Auth::routes();
 Route::get('/login/guest','Auth\LoginController@authenticate');
 Route::get('/','RoadmapController@index');
+
+Route::get('/mytodos', 'TodoController@index')->name('todos.index');
