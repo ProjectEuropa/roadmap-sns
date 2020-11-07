@@ -5,13 +5,13 @@
   <ul class="navbar-nav ml-auto">
 
     @guest
-    <li class="nav-item">
+    <li class="nav-item border-left border-right">
       <a class="nav-link" href="{{ route('register') }}">アカウント登録</a>
     </li>
     @endguest
 
     @guest
-    <li class="nav-item">
+    <li class="nav-item border-right">
       <a class="nav-link" href="">ログイン</a>
     </li>
     @endguest
