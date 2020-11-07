@@ -40,6 +40,26 @@ class RoadmapController extends Controller
                     'name' => 'ユーザー名3',
                 ],
             ],
+            (object)[
+                'id'=>4,
+                'title' => 'ロードマップ4',
+                'body' => '本文4',
+                'created_at' => now(),
+                'user' => (object)[
+                    'id' => 4,
+                    'name' => 'ユーザー名4',
+                ],
+            ],
+            (object)[
+                'id'=>5,
+                'title' => 'ロードマップ5',
+                'body' => '本文5',
+                'created_at' => now(),
+                'user' => (object)[
+                    'id' => 5,
+                    'name' => 'ユーザー名5',
+                ],
+            ],
         ];
 
         return view('roadmaps.index',['roadmaps' => $roadmaps ]);

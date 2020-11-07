@@ -5,9 +5,10 @@
 @section('content')
   @include('nav')
   <div class="container">
-    <div class="card-deck mt-2">
+    <div class="card-deck mt-3">
       @foreach($roadmaps as $roadmap)
-      <div class="card">
+      <div class="col-md-6 mb-3">
+      <div class="card h-100">
         <div class="card-body d-flex flex-row">
           <i class="fas fa-user-circle fa-3x mr-1"></i>
           <div>
@@ -27,6 +28,7 @@
             {!! nl2br(e( $roadmap->body )) !!}
           </div>
         </div>
+      </div>
       </div>
       @endforeach
     </div>
