@@ -25,7 +25,13 @@
             {{ $roadmap->title }}
           </h3>
           <div class="card-text">
-            {!! nl2br(e( $roadmap->body )) !!}
+            <div class="estimated-time mr-1"> 
+              <i class="far fa-clock"></i>
+              <span>{{ $roadmap->estimated_time }}h</span>
+            </div>
+            <div class="level">
+            
+            </div>
           </div>
         </div>
       </div>
