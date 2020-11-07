@@ -29,9 +29,6 @@
               <i class="far fa-clock"></i>
               <span>{{ $roadmap->estimated_time }}h</span>
             </div>
-            <div class="level">
-            
-            </div>
           </div>
         </div>
       </div>

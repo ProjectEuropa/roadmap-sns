@@ -31,8 +31,8 @@ class RoadmapController extends Controller
                     'id' => 2,
                     'name' => 'ユーザー名2',
                 ],
-                'estimated_time' => '10',
-                'level' => '1',
+                'estimated_time' => '15',
+                'level' => '2',
             ],
             // (object)[
             //     'id'=>3,
