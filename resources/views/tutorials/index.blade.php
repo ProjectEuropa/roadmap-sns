@@ -6,8 +6,16 @@
   @include('nav')
   <div class="container">
     <div class="d-flex flex-row border p-3 mt-2">
-      <div class="border p-2 mr-1">Flex item 1</div>
-      <div class="border p-2 mr-1">Flex item 2</div>
-      <div class="border p-2 mr-1">Flex item 3</div>
+      @foreach($tutorials as $tutorial)
+      <div class="border p-2 mr-1">{{ $tutorial->name }}</div>
+      @endforeach
+    </div>
+    
+    <div class="row">
+      <div class="col col-md-4">
+      @foreach($tasks as $task)
+      <div class="border p-2 mr-1">{{ $task->name }}</div>
+      @endforeach
+      </div>
     </div>
   </div>
