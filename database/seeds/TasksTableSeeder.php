@@ -4,7 +4,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class TutorialsTableSeeder extends Seeder
+class TasksTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,23 +13,21 @@ class TutorialsTableSeeder extends Seeder
      */
     public function run()
     {
-        $user = DB::table('users')->where('email','guest@guest.com')->first();
+        $tutorial = DB::table('tutorials')->first();
 
-        $names = ['コンピュータサイエンス基礎','Linux基礎','HTML/CSS基礎'];
+        $names = ['１章 「n進数」の扱いに慣れる','２章 ２進数の計算と数値表現','３章 コンピュータの回路を知る'];
+
         $counter = 0;
 
         foreach($names as $name){
-            DB::table('tutorials')->insert([
+            DB::table('tasks')->insert([
                 'name' => $name,
-                'user_id' => $user->id,
+                'tutorial_id' => $tutorial->id,
                 'order' => $counter+1,
-                'status' => $counter+1,
+                'status' => '1',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);
-            $counter++;
         }
-
-
     }
 }

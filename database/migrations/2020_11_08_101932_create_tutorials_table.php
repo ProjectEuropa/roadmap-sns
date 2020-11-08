@@ -18,7 +18,7 @@ class CreateTutorialsTable extends Migration
             $table->string('name');
             $table->bigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->bigInteger('order_id');
+            $table->bigInteger('order');
             $table->bigInteger('status');
             $table->timestamps();
         });
