@@ -24,7 +24,7 @@
 
     @auth
     <li class="nav-item border-right">
-      <a class="nav-link" href=""><i class="fab fa-trello mr-1"></i>私のロードマップ</a>
+      <a class="nav-link" href="{{ route('tutorials.index') }}"><i class="fab fa-trello mr-1"></i>学習中の教材</a>
     </li>
     @endauth
 
