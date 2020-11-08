@@ -10,4 +10,12 @@
       <div class="border p-2 mr-1">{{ $tutorial->name }}</div>
       @endforeach
     </div>
+    
+    <div class="row">
+      <div class="col col-md-4">
+      @foreach($tasks as $task)
+      <div class="border p-2 mr-1">{{ $task->name }}</div>
+      @endforeach
+      </div>
+    </div>
   </div>
