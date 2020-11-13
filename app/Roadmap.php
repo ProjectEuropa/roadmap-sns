@@ -25,4 +25,9 @@ class Roadmap extends Model
             : false;
     }
 
+    public function getCountLikesAttribute(): int
+    {
+        return $this->likes->count();
+    }
+
 }

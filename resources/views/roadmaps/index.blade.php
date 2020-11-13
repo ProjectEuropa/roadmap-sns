@@ -35,6 +35,7 @@
           <div class="card-text">
             <roadmap-like
             :initial-is-liked-by='@json($roadmap->isLikedBy(Auth::user()))'
+            :initial-count-likes='@json($roadmap->count_likes)'
             >
             </roadmap-like>
           </div>
