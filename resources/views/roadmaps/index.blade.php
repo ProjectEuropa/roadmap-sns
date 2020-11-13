@@ -33,7 +33,9 @@
         </div>
         <div class="card-body pt-0 pb-2 pl-3">
           <div class="card-text">
-            <roadmap-like>
+            <roadmap-like
+            :initial-is-liked-by='@json($roadmap->isLikedBy(Auth::user()))'
+            >
             </roadmap-like>
           </div>
         </div>
