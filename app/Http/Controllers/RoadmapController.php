@@ -16,7 +16,7 @@ class RoadmapController extends Controller
 
     public function like(Request $request,Roadmap $roadmap)
     {
-        $roadmap->likes()->depatch($request->user()->id);
+        $roadmap->likes()->detach($request->user()->id);
         $roadmap->likes()->attach($request->user()->id);
 
         return [
@@ -28,7 +28,7 @@ class RoadmapController extends Controller
 
     public function unlike(Request $request,Roadmap $roadmap)
     {
-        $roadmap->likes()->depatch($request->user()->id);
+        $roadmap->likes()->detach($request->user()->id);
 
         return[
             'id' => $roadmap->id,

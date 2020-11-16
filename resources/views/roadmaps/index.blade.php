@@ -37,7 +37,7 @@
             :initial-is-liked-by='@json($roadmap->isLikedBy(Auth::user()))'
             :initial-count-likes='@json($roadmap->count_likes)'
             :authorized='@json(Auth::check())'
-            endpoint="{{ route('roadmaps.like',['roadmaps' => $roadmap]) }}"
+            endpoint="{{ route('roadmaps.like',['roadmap' => $roadmap]) }}"
             >
             </roadmap-like>
           </div>
