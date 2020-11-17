@@ -24,10 +24,16 @@ class TasksTableSeeder extends Seeder
                 'name' => $name,
                 'tutorial_id' => $tutorial->id,
                 'order' => $counter+1,
-                'status' => '1',
+                'status' => $counter+1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);
+            $counter++;
+
+            if($counter==3){
+                $counter = 0;
+            }
+
         }
     }
 }
