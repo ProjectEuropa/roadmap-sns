@@ -15,14 +15,26 @@
       <div class="col border col-md-4">
         <h3 class="text-center"> Todo </h3>
           @foreach($tasks as $task)
-          <div class="border p-2 m-1">{{ $task->name }}</div>
+            @if($task->status == 1)
+              <div class="border p-2 m-1">{{ $task->name }}</div>
+            @endif
           @endforeach
       </div>
       <div class="col border col-md-4">
-      <h3 class="text-center"> Doing </h3>
+        <h3 class="text-center"> Doing </h3>
+         @foreach($tasks as $task)
+            @if($task->status == 2)
+              <div class="border p-2 m-1">{{ $task->name }}</div>
+            @endif
+         @endforeach
       </div>
       <div class="col border col-md-4">
-      <h3 class="text-center"> Done </h3>
+        <h3 class="text-center"> Done </h3>
+        @foreach($tasks as $task)
+          @if($task->status == 3)
+            <div class="border p-2 m-1">{{ $task->name }}</div>
+          @endif
+        @endforeach
       </div>
     </div>
   </div>
