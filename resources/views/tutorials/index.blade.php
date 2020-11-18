@@ -9,6 +9,9 @@
       @foreach($tutorials as $tutorial)
       <div class="border p-2 mr-1">{{ $tutorial->name }}</div>
       @endforeach
+      <div class="p-2 mr-1">
+        <tutorial-add></tutorial-add>
+      </div>
     </div>
     
     <div class="row mt-2">
@@ -38,3 +41,4 @@
       </div>
     </div>
   </div>
+  @endsection
