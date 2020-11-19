@@ -12,4 +12,19 @@
 </template>
 
 <script>
+export default {
+  data: function(){
+    return {
+      title: '',
+    }
+  },
+
+  methods: {
+    addList:function() {
+      this.$store.dispatch('addlist',{title:this.title})
+      this.title = ''
+    },
+  }
+
+}
 </script>
