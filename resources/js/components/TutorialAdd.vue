@@ -1,11 +1,16 @@
 <template>
-  <form class="addlist" @submit.prevent="addList">
+  <form :class="classList" @submit.prevent="addList">
     <input v-model="title"
     type="test"
     class="text-input"
     placeholder="新しい教材名を入力"
+    @focusin= "startEditing"
+    @focusout= "finishEditing"
     >
-    <button type="submit" class="teal accent-4 text-white border-0 rounded-pill">
+    <button type="submit"
+    class="text-white border-0 rounded-pill"
+    :class="[titleExists ? 'teal accent-4' : 'stylish-color']"
+    v-if="isEditing || titleExists">
       教材を追加
     </button>
   </form>
@@ -16,6 +21,20 @@ export default {
   data: function(){
     return {
       title: '',
+      isEditing: false,
+    }
+  },
+  computed:{
+    classList(){
+      const classList = ['addlist']
+      if(this.isEditing){
+        classList.push('active')
+      }
+      return classList
+    },
+
+    titleExists(){
+      return this.title.length > 0
     }
   },
 
@@ -23,6 +42,12 @@ export default {
     addList:function() {
       this.$store.dispatch('addlist',{title:this.title})
       this.title = ''
+    },
+    startEditing(){
+      this.isEditing = true
+    },
+    finishEditing(){
+      this.isEditing = false
     },
   }
 
