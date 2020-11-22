@@ -7,7 +7,10 @@
     @focusin= "startEditing"
     @focusout= "finishEditing"
     >
-    <button type="submit" class="teal accent-4 text-white border-0 rounded-pill">
+    <button type="submit"
+    class="text-white border-0 rounded-pill"
+    :class="[titleExists ? 'teal accent-4' : 'stylish-color']"
+    v-if="isEditing || titleExists">
       教材を追加
     </button>
   </form>
@@ -29,6 +32,10 @@ export default {
       }
       return classList
     },
+
+    titleExists(){
+      return this.title.length > 0
+    }
   },
 
   methods: {
