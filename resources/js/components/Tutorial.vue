@@ -1,5 +1,5 @@
 <template>
-  <div class="list-index">
+  <div class="d-flex flex-row">
     <tutorial-list v-for="(item, index) in lists"
     :key="item.id"
     :title="item.title"
