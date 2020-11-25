@@ -11,10 +11,16 @@ export default new Vuex.Store({
     addlist(state, payload) {
       state.lists.push({ title:payload.title, cards:[] })
     },
+    removeTutorial(state, payload) {
+      state.lists.splice(payload.listIndex, 1)
+    },
   },
   actions: {
     addlist(context, payload){
       context.commit('addlist',payload)
+    },
+    removeTutorial(context, payload) {
+      context.commit('removeTutorial', payload)
     },
   },
   getters: {

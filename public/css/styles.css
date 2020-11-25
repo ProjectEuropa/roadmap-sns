@@ -1,0 +1,45 @@
+.list {
+    position: relative;
+    display: inline-block;
+    align-items: flex-start;
+    background-color: #e0e0e0;
+    border: solid #ddd 1px;
+    color: gray;
+}
+
+.listheader {
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.deletelist {
+    position: absolute;
+    top: 6px;
+    right: 14px;
+}
+
+.deletelist:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.text-input {
+    background-color: #ccc;
+    color: #242424;
+    cursor: pointer;
+    overflow: overlay;
+}
+
+.text-input:focus {
+    outline: 0;
+    cursor: initial;
+}
+
+.add-button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.active .text-input {
+    background-color: #fff;
+}

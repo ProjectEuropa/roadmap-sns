@@ -1,7 +1,7 @@
 <template>
-  <div class="list border p-2 mr-1">
-    <div class="listheader">
-      <p class="tutorial-title">{{ title }}</p>
+  <div class="list border p-2 mr-1 align-top">
+    <div class="d-inline-block">
+      <p class="m-1 pr-5">{{ title }}</p>
       <div class="deletelist" @click="removeTutorial">×</div>
     </div>
   </div>
@@ -23,8 +23,10 @@ export default{
   },
   methods:{
     removeTutorial:function(){
-      this.$store.dispatch('removeTutorial',{ listIndex:this.listIndex })
-    }
+      if(confirm('本当にこのリストを削除しますか？')){
+        this.$store.dispatch('removeTutorial',{ listIndex:this.listIndex })
+      }
+    },
   }
 }
 
