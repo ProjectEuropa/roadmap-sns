@@ -23,8 +23,10 @@ export default{
   },
   methods:{
     removeTutorial:function(){
-      this.$store.dispatch('removeTutorial',{ listIndex:this.listIndex })
-    }
+      if(confirm('本当にこのリストを削除しますか？')){
+        this.$store.dispatch('removeTutorial',{ listIndex:this.listIndex })
+      }
+    },
   }
 }
 
