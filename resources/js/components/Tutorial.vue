@@ -3,7 +3,7 @@
     <tutorial-list v-for="(item, index) in lists"
     :key="item.id"
     :title="item.title"
-    :listindex="index"
+    :listIndex="index"
     />
     <div class="p-2 mr-1">
       <tutorial-add/>
