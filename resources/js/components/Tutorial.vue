@@ -13,7 +13,7 @@
 
 <script>
 import TutorialAdd from './TutorialAdd'
-import TutorialList from './TutoriaList'
+import TutorialList from './TutorialList'
 import { mapState } from 'vuex'
 
 export default {
@@ -22,9 +22,15 @@ export default {
     TutorialList,
   },
   computed:{
-    ...mapState([
-      'lists'
-    ]),
+      async index(){
+      const response = await axios.get('/tutorials')
+
+      this.title = response.data.name
+    },
+
+    // ...mapState([
+    //   'lists'
+    // ]),
   },
 }
 
