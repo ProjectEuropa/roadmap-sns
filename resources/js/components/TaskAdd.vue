@@ -18,5 +18,11 @@ export default {
       body: '',
     }
   },
+  methods: {
+  addCardToList: function() {
+    this.$store.dispatch('addCardToList', { body: this.body, listIndex: this.listIndex })
+      this.body = ''
+   }
+  }
 }
 </script>
