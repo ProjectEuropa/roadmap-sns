@@ -3,11 +3,13 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-const savedLists = localStorage.getItem('tutorial-lists')
+const axios = require('axios');
+
+// const savedLists = localStorage.getItem('tutorial-lists')
 
 const store= new Vuex.Store({
-  state: {
-    lists:savedLists ? JSON.parse(savedLists):[],
+  state: { lists:[]
+    // lists:savedLists ? JSON.parse(savedLists):[],
   },
   mutations: {
     addlist(state, payload) {
@@ -29,8 +31,8 @@ const store= new Vuex.Store({
   }
 })
 
-store.subscribe((mutation, state) => {
-  localStorage.setItem('tutorial-lists', JSON.stringify(state.lists))
-})
+// store.subscribe((mutation, state) => {
+//   localStorage.setItem('tutorial-lists', JSON.stringify(state.lists))
+// })
 
 export default store
