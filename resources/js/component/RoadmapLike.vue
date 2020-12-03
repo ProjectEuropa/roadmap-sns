@@ -36,9 +36,16 @@ export default {
   data(){
     return {
       isLikedBy: this.initialIsLikedBy,
-      countLikes:this.initialCountLikes,
+      countLikes: this.initialCountLikes,
       gotToLike:false,
     }
+  },
+  computed:{
+    async index(){
+      const response = await axios.get('/tutorials')
+    
+    this.lists = response.data.tutorials
+    },
   },
   methods:{
     clickLike(){
@@ -46,7 +53,6 @@ export default {
         alert('いいね機能はログイン中のみ使用できます')
         return
       }
-
       this.isLikedBy
         ? this.unlike()
         : this.like()
