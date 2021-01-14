@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-const axios = require('axios');
+// const axios = require('axios');
 
 // const savedLists = localStorage.getItem('tutorial-lists')
 
