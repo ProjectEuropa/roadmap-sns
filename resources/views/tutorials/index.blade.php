@@ -7,16 +7,28 @@
   <div class="container">
   <!-- <div class="d-flex flex-row border p-3 mt-1"> -->
     <div class="border p-3 mt-1">
-      <tutorial></tutorial>
+      <!-- <tutorial
+      :initial-title='@json($tutorials)'
+      >
+      </tutorial> -->
 
+      <!-- DBの値を表示 -->
       <!-- @foreach($tutorials as $tutorial)
       <div class="border p-2 mr-1">{{ $tutorial->name }}</div>
       @endforeach -->
-      <!-- <div class="p-2 mr-1">
+
+      @foreach($tutorials as $tutorial)
+        <tutorial-list
+        :initial-title='@json($tutorial->name)'>
+        </tutorial-list>
+      @endforeach
+
+      <div class="p-2 mr-1">
         <tutorial-add></tutorial-add>
-      </div> -->
-    </div>
+      </div>
     
+    </div>
+
     <div class="row mt-2">
       <div class="col border col-md-4">
         <h3 class="text-center"> Todo </h3>

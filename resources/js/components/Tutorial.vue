@@ -2,12 +2,13 @@
   <div class="d-flex flex-row">
     <tutorial-list v-for="(list, index) in lists"
     :key="list.id"
-    :title="list.title"
+    :title="list.name"
     :listIndex="index"
     />
     <div class="p-2 mr-1">
       <tutorial-add/>
     </div>
+
   </div>
 </template>
 
@@ -21,16 +22,22 @@ export default {
     TutorialAdd,
     TutorialList,
   },
+  props: {
+    initialTitle:{
+      // type:String,
+      type:Array,
+      default:[]
+    },
+  },
   data(){
     return {
-      lists:[]
+      lists:[this.initialTitle]
     }
   },
   computed:{
       async index(){
         const response = await axios.get('/tutorials')
 
-      //this.lists = response.data
       this.lists = response.data.tutorials
       },
 
