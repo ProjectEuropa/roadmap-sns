@@ -24,27 +24,27 @@ export default {
   },
   props: {
     initialTitle:{
-      // type:String,
       type:Array,
       default:[]
     },
   },
   data(){
     return {
-      lists:[this.initialTitle]
+      lists:this.initialTitle,
     }
   },
-  computed:{
-      async index(){
-        const response = await axios.get('/tutorials')
 
-      this.lists = response.data.tutorials
-      },
+  // computed:{
+  //     async index(){
+  //       const response = await axios.get('/tutorials')
 
-    // ...mapState([
-    //   'lists'
-    // ]),
-  },
+  //     this.lists = response.data.tutorials
+  //     },
+
+  //   // ...mapState([
+  //   //   'lists'
+  //   // ]),
+  // },
 }
 
 </script>

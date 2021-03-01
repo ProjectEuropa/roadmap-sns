@@ -12,7 +12,7 @@
 
 export default{
   props:{
-    initialTitle:{
+    title:{
       type:String,
     },
     listIndex:{
@@ -20,11 +20,11 @@ export default{
       required:true
     }
   },
-  data(){
-    return {
-      title:this.initialTitle,
-    }
-  },
+  // data(){
+  //   return {
+  //     title:this.initialTitle,
+  //   }
+  // },
   methods:{
     removeTutorial:function(){
       if(confirm('本当にこのリストを削除しますか？')){
