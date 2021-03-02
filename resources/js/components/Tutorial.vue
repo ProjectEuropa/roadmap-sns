@@ -8,14 +8,13 @@
     <div class="p-2 mr-1">
       <tutorial-add/>
     </div>
-
   </div>
 </template>
 
 <script>
 import TutorialAdd from './TutorialAdd'
 import TutorialList from './TutorialList'
-// import { mapState } from 'vuex'
+import { mapState } from 'vuex'
 
 export default {
   components:{
@@ -34,17 +33,17 @@ export default {
     }
   },
 
-  // computed:{
+  computed:{
   //     async index(){
   //       const response = await axios.get('/tutorials')
 
   //     this.lists = response.data.tutorials
   //     },
 
-  //   // ...mapState([
-  //   //   'lists'
-  //   // ]),
-  // },
+    // ...mapState([
+    //   'lists'
+    // ]),
+  },
 }
 
 </script>

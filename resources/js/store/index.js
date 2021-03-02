@@ -8,7 +8,8 @@ Vue.use(Vuex)
 // const savedLists = localStorage.getItem('tutorial-lists')
 
 const store= new Vuex.Store({
-  state: { lists:[]
+  state: { 
+    lists:[]
     // lists:savedLists ? JSON.parse(savedLists):[],
   },
   mutations: {

@@ -5,10 +5,10 @@ import RoadmapLike from './components/RoadmapLike'
 
 import Tutorial from './components/Tutorial'
 
-import TutorialList from './components/TutorialList'
+// import TutorialList from './components/TutorialList'
 
-// 2021/01/31追加
-import TutorialAdd from './components/TutorialAdd'
+// // 2021/01/31追加
+// import TutorialAdd from './components/TutorialAdd'
 
 const app = new Vue({
   el: '#app',
@@ -17,7 +17,7 @@ const app = new Vue({
     RoadmapLike,
     Tutorial,
 
-    TutorialList,
-    TutorialAdd,
+    // TutorialList,
+    // TutorialAdd,
   }
 })
