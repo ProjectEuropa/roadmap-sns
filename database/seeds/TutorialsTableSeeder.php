@@ -15,12 +15,12 @@ class TutorialsTableSeeder extends Seeder
     {
         $user = DB::table('users')->where('email','guest@guest.com')->first();
 
-        $names = ['コンピュータサイエンス基礎','Linux基礎','HTML/CSS基礎'];
+        $titles = ['コンピュータサイエンス基礎','Linux基礎','HTML/CSS基礎'];
         $counter = 0;
 
-        foreach($names as $name){
+        foreach($titles as $title){
             DB::table('tutorials')->insert([
-                'name' => $name,
+                'title' => $title,
                 'user_id' => $user->id,
                 'order' => $counter+1,
                 'status' => $counter+1,
