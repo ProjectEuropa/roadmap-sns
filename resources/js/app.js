@@ -2,7 +2,13 @@ import './bootstrap'
 import Vue from 'vue'
 import store from './store'
 import RoadmapLike from './components/RoadmapLike'
+
 import Tutorial from './components/Tutorial'
+
+// import TutorialList from './components/TutorialList'
+
+// // 2021/01/31追加
+// import TutorialAdd from './components/TutorialAdd'
 
 const app = new Vue({
   el: '#app',
@@ -10,5 +16,8 @@ const app = new Vue({
   components: {
     RoadmapLike,
     Tutorial,
+
+    // TutorialList,
+    // TutorialAdd,
   }
 })

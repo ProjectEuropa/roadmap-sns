@@ -8,7 +8,8 @@ Vue.use(Vuex)
 // const savedLists = localStorage.getItem('tutorial-lists')
 
 const store= new Vuex.Store({
-  state: { lists:[]
+  state: { 
+    lists:[]
     // lists:savedLists ? JSON.parse(savedLists):[],
   },
   mutations: {
@@ -20,9 +21,14 @@ const store= new Vuex.Store({
     },
   },
   actions: {
-    addlist(context, payload){
-      context.commit('addlist',payload)
+    // addlist(context, payload){
+    //   context.commit('addlist',payload)
+    // },
+    async addlist(context, payload){
+      const response = await axios.post('/tutorials/store',payload)
+      context.commit('addlist', response.data)
     },
+  
     removeTutorial(context, payload) {
       context.commit('removeTutorial', payload)
     },

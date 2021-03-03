@@ -14,25 +14,31 @@
 <script>
 import TutorialAdd from './TutorialAdd'
 import TutorialList from './TutorialList'
-// import { mapState } from 'vuex'
+import { mapState } from 'vuex'
 
 export default {
   components:{
     TutorialAdd,
     TutorialList,
   },
+  props: {
+    initialTitle:{
+      type:Object,
+      default:[]
+    },
+  },
   data(){
     return {
-      lists:[]
+      lists:this.initialTitle,
     }
   },
-  computed:{
-      async index(){
-        const response = await axios.get('/tutorials')
 
-      //this.lists = response.data
-      this.lists = response.data.tutorials
-      },
+  computed:{
+  //     async index(){
+  //       const response = await axios.get('/tutorials')
+
+  //     this.lists = response.data.tutorials
+  //     },
 
     // ...mapState([
     //   'lists'

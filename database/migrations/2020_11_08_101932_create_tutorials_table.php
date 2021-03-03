@@ -15,7 +15,7 @@ class CreateTutorialsTable extends Migration
     {
         Schema::create('tutorials', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->string('title');
             $table->bigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->bigInteger('order');

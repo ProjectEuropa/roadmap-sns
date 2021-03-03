@@ -39,10 +39,16 @@ export default {
   },
 
   methods: {
-    addList:function() {
-      this.$store.dispatch('addlist',{title:this.title})
+    async addList() {
+      await this.$store.dispatch('addlist',{title:this.title})
       this.title = ''
     },
+
+    //旧コード
+    // addList:function() {
+    //   this.$store.dispatch('addlist',{title:this.title})
+    //   this.title = ''
+    // },
     startEditing(){
       this.isEditing = true
     },
