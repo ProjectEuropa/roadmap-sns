@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Tutorial;
 use App\Task;
 
+use App\Http\Requests\TutorialRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -22,4 +23,31 @@ class TutorialController extends Controller
         'tasks' => $tasks
         ]);
     }
+
+    public function store(TutorialRequest $request,Tutorial $tutorial){
+        $tutorial->title = $request->title;
+        $tutorial->user_id = $request->user()->id;
+        $tutorial->order = 1;
+        $tutorial->status = 1;
+        $tutorial->save();
+
+        //新しいtutorialsを返す
+        $tutorials = Auth::user()->tutorials()->get()->sortByDesc('created_at');
+
+        return [
+            'tutorials' => $tutorials,
+        ];
+    }
+
+    //参考
+    // public function store(FolderRequest $request, Folder $folder)
+    // {
+    //     $folder->title = $request->title;
+    //     Auth::user()->folders()->save($folder);
+
+    //     return redirect()->route(
+    //         'todos.index',
+    //         ['id' => $folder->id,]
+    //     );
+    // }
 }

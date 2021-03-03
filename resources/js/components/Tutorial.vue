@@ -23,7 +23,7 @@ export default {
   },
   props: {
     initialTitle:{
-      type:Array,
+      type:Object,
       default:[]
     },
   },
