@@ -40,13 +40,6 @@ export default {
       gotToLike:false,
     }
   },
-  computed:{
-    async index(){
-      const response = await axios.get('/tutorials')
-    
-    this.lists = response.data.tutorials
-    },
-  },
   methods:{
     clickLike(){
       if(!this.authorized){
