@@ -10,6 +10,10 @@
 
 export default{
   props:{
+    id:{
+      type:Number,
+      required:true
+    },
     title:{
       type:String,
       required:true
@@ -23,7 +27,9 @@ export default{
   methods:{
     removeTutorial:function(){
       if(confirm('本当にこのリストを削除しますか？')){
-        this.$store.dispatch('removeTutorial',{ listIndex:this.listIndex })
+        this.$store.dispatch('removeTutorial',{ 
+        id:this.id,
+        listIndex:this.listIndex })
       }
     },
   }

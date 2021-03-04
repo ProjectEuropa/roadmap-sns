@@ -39,15 +39,14 @@ class TutorialController extends Controller
         ];
     }
 
-    //参考
-    // public function store(FolderRequest $request, Folder $folder)
-    // {
-    //     $folder->title = $request->title;
-    //     Auth::user()->folders()->save($folder);
+    public function destroy(Tutorial $tutorial){
+        $tutorial->delete();
 
-    //     return redirect()->route(
-    //         'todos.index',
-    //         ['id' => $folder->id,]
-    //     );
-    // }
+        //新しいtutorialsを返す
+        $tutorials = Auth::user()->tutorials()->get()->sortByDesc('created_at');
+
+        return [
+            'tutorials' => $tutorials,
+        ];
+    }
 }

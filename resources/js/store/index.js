@@ -29,8 +29,10 @@ const store= new Vuex.Store({
       context.commit('addlist', response.data)
     },
   
-    removeTutorial(context, payload) {
-      context.commit('removeTutorial', payload)
+    async removeTutorial(context, payload) {
+      const response = await axios.delete(`/tutorials/${payload.id}/destroy`,payload)
+
+      context.commit('removeTutorial', response.data)
     },
   },
   getters: {

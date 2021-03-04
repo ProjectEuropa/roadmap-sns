@@ -2,6 +2,7 @@
   <div class="d-flex flex-row">
     <tutorial-list v-for="(list, index) in lists"
     :key="list.id"
+    :id="list.id"
     :title="list.title"
     :listIndex="index"
     />
