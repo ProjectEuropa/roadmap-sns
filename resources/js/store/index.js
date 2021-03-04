@@ -17,7 +17,7 @@ const store= new Vuex.Store({
       state.lists = payload
     },
     addlist(state, payload) {
-      state.lists.push({ title:payload.title, cards:[] })
+      state.lists = payload.tutorials
     },
     removeTutorial(state, payload) {
       state.lists.splice(payload.listIndex, 1)
