@@ -30,10 +30,13 @@ export default {
   },
   data(){
     return {
-      lists:this.initialTitle,
+      // lists:this.initialTitle,
+      getLists:this.initialTitle,
     }
   },
-
+  mounted: function () {
+    this.$store.dispatch('initiallist',this.getLists)
+  },
   computed:{
   //     async index(){
   //       const response = await axios.get('/tutorials')
@@ -41,9 +44,9 @@ export default {
   //     this.lists = response.data.tutorials
   //     },
 
-    // ...mapState([
-    //   'lists'
-    // ]),
+  ...mapState([
+      'lists'
+  ]),
   },
 }
 
