@@ -19,8 +19,8 @@ export default{
       required:true
     },
     listIndex:{
-      //type:Number,
-      type:String,
+      type:Number,
+      // type:String,
       required:true
     }
   },

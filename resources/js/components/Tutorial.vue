@@ -24,13 +24,12 @@ export default {
   },
   props: {
     initialTitle:{
-      type:Object,
+      type:Array,
       default:[]
     },
   },
   data(){
     return {
-      // lists:this.initialTitle,
       getLists:this.initialTitle,
     }
   },
@@ -38,12 +37,6 @@ export default {
     this.$store.dispatch('initiallist',this.getLists)
   },
   computed:{
-  //     async index(){
-  //       const response = await axios.get('/tutorials')
-
-  //     this.lists = response.data.tutorials
-  //     },
-
   ...mapState([
       'lists'
   ]),
