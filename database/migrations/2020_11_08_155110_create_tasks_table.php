@@ -17,7 +17,8 @@ class CreateTasksTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->bigInteger('tutorial_id');
-            $table->foreign('tutorial_id')->references('id')->on('tutorials');
+            $table->foreign('tutorial_id')->references('id')->on('tutorials')
+            ->onDelete('cascade');
             $table->bigInteger('order');
             $table->bigInteger('status');
             $table->timestamps();
