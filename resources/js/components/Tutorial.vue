@@ -34,12 +34,12 @@ export default {
     }
   },
   mounted: function () {
-    this.$store.dispatch('initiallist',this.getLists)
+    this.$store.dispatch('tutorial/initiallist',this.getLists)
   },
   computed:{
-  ...mapState([
-      'lists'
-  ]),
+  ...mapState({
+      lists: state => state.tutorial.lists
+  }),
   },
 }
 
