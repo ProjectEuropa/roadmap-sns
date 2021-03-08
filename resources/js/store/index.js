@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 const store= new Vuex.Store({
   state: { 
-    lists:[]
+    lists:[],
+    cards:[],
   },
   mutations: {
     initiallist(state, payload){

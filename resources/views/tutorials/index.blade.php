@@ -18,7 +18,12 @@
     
     </div>
 
-    <div class="row mt-2">
+    <task
+    :initial-tasks='@json($tasks)'
+    >
+    </task>  
+
+    <!-- <div class="row mt-2">
       <div class="col border col-md-4">
         <h3 class="text-center"> Todo </h3>
           @foreach($tasks as $task)
@@ -43,6 +48,6 @@
           @endif
         @endforeach
       </div>
-    </div>
+    </div> -->
   </div>
   @endsection

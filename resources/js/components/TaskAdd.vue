@@ -13,6 +13,12 @@
 
 <script>
 export default {
+  props: {
+    listIndex: {
+      type: Number,
+      required: true,
+    }
+  },
   data: function() {
     return {
       body: '',
