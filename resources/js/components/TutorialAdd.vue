@@ -40,15 +40,9 @@ export default {
 
   methods: {
     async addList() {
-      await this.$store.dispatch('addlist',{title:this.title})
+      await this.$store.dispatch('tutorial/addlist',{title:this.title})
       this.title = ''
     },
-
-    //旧コード
-    // addList:function() {
-    //   this.$store.dispatch('addlist',{title:this.title})
-    //   this.title = ''
-    // },
     startEditing(){
       this.isEditing = true
     },

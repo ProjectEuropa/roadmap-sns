@@ -11,8 +11,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(RoadmapsTableSeeder::class);
+        //親テーブルから先に作成するよう、実行順番に注意する。
         $this->call(UsersTableSeeder::class);
+        $this->call(RoadmapsTableSeeder::class);
         $this->call(TutorialsTableSeeder::class);
         $this->call(TasksTableSeeder::class);
     }
