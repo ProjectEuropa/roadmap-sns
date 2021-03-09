@@ -5,6 +5,9 @@
             <div v-for="task in Todo" :key="task.id" class="border p-2 m-1">
                 {{ task.name }}
             </div>
+            <div class="m-1">
+              <task-add />
+            </div>
       </div>
       <div class="col border col-md-4">
         <h3 class="text-center"> Doing </h3>
@@ -22,9 +25,13 @@
 </template>
 
 <script>
+import TaskAdd from './TaskAdd'
 import { mapState } from 'vuex'
 
 export default{
+  components:{
+    TaskAdd,
+  },
   props:{
     initialTasks:{
       type:Array,
