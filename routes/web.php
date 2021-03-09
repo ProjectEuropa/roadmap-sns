@@ -15,9 +15,10 @@ Auth::routes();
 Route::get('/login/guest','Auth\LoginController@authenticate');
 Route::get('/','RoadmapController@index');
 
-Route::get('/tutorials', 'TutorialController@index')->name('tutorials.index');
-Route::post('/tutorials/store', 'TutorialController@store');
-Route::delete('/tutorials/{tutorial}/destroy', 'TutorialController@destroy');
+Route::get('/tutorials', 'TutorialController@index')->name('tutorials.index')->middleware('auth');
+Route::post('/tutorials/store', 'TutorialController@store')->middleware('auth');
+Route::delete('/tutorials/{tutorial}/destroy', 'TutorialController@destroy')->middleware('auth');
+
 
 
 Route::prefix('roadmaps')->name('roadmaps.')->group(function(){
