@@ -19,6 +19,8 @@ Route::get('/tutorials', 'TutorialController@index')->name('tutorials.index')->m
 Route::post('/tutorials/store', 'TutorialController@store')->middleware('auth');
 Route::delete('/tutorials/{tutorial}/destroy', 'TutorialController@destroy')->middleware('auth');
 
+Route::post('/tasks/store','TaskController@store')->middleware('auth');
+Route::delete('/tasks/{task}/destroy', 'TaskController@destroy')->middleware('auth');
 
 
 Route::prefix('roadmaps')->name('roadmaps.')->group(function(){
