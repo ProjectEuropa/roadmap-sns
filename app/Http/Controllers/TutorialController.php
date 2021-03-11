@@ -20,7 +20,7 @@ class TutorialController extends Controller
 
         return view('tutorials.index',[
         'tutorials' => $tutorials,
-        'tasks' => $tasks
+        'tasks' => $tasks->values()
         ]);
     }
 
