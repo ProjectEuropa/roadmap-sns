@@ -13,7 +13,7 @@ class Tutorial extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function taks(): HasMany
+    public function tasks(): HasMany
     {
         return $this->hasMany('App\Task');
     }
