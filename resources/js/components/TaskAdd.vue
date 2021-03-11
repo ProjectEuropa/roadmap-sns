@@ -1,6 +1,6 @@
 <template>
   <form :class="classList" @submit.prevent="addTaskToList">
-    <input  v-model="body"
+    <input  v-model="name"
             type="text"
             class="text-input"
             placeholder="タスクを追加"
@@ -8,8 +8,8 @@
             @focusout="finishEditing"
     />
     <button type="submit" class="text-white border-0 rounded-pill"
-    :class="[bodyExists ? 'teal sccent-4' : 'stylish-color']"
-    v-if="isEditing || bodyExists">
+    :class="[nameExists ? 'teal sccent-4' : 'stylish-color']"
+    v-if="isEditing || nameExists">
       タスクを追加
     </button>
   </form>
@@ -25,7 +25,7 @@ export default {
   // },
   data: function() {
     return {
-      body: '',
+      name: '',
       isEditing:false,
     }
   },
@@ -37,8 +37,8 @@ export default {
       }
       return classList
     },
-    bodyExists(){
-      return this.body.length > 0
+    nameExists(){
+      return this.name.length > 0
     }
   },
   methods: {
@@ -49,8 +49,8 @@ export default {
     this.isEditing = false
   },
   addTaskToList: function() {
-    this.$store.dispatch('task/addtask', { body: this.body })
-      this.body = ''
+    this.$store.dispatch('task/addtask', { name: this.name })
+      this.name = ''
    }
   }
 }
