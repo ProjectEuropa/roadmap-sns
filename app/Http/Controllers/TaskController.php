@@ -28,4 +28,14 @@ class TaskController extends Controller
             'tasks' => $tasks,
         ];
     }
+
+    public function destroy(Task $task){
+        $task->delete();
+
+        $tasks = Task::where('tutorial_id',$task->tutorial_id)->orderBy('created_at')->get();
+
+        return [
+            'tasks' => $tasks,
+        ];
+    }
 }
