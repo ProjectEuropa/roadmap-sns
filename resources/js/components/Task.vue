@@ -6,7 +6,9 @@
                 {{ task.name }}
             </div>
             <div class="m-1">
-              <task-add />
+              <task-add
+                :status=1
+              />
             </div>
       </div>
       <div class="col border col-md-4">
@@ -14,11 +16,21 @@
          <div v-for="task in Doing" :key="task.id" class="border p-2 m-1">
                 {{ task.name }}
             </div>
+            <div class="m-1">
+              <task-add
+                :status=2
+              />
+            </div>
       </div>
       <div class="col border col-md-4">
         <h3 class="text-center"> Done </h3>
         <div v-for="task in Done" :key="task.id" class="border p-2 m-1">
                 {{ task.name }}
+            </div>
+            <div class="m-1">
+              <task-add
+                :status=3
+              />
             </div>
       </div>
     </div>

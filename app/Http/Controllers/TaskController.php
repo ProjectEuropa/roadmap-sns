@@ -15,7 +15,7 @@ class TaskController extends Controller
         $task->name = $request->name;
         $task->tutorial_id = 1;
         $task->order = 1;
-        $task->status = 1;
+        $task->status = $request->status;
         $task->save();
 
         // $tutorials = Auth::user()->tutorials()->get()->sortByDesc('created_at');
