@@ -2,8 +2,9 @@
   <div class="row mt-2">
       <div class="col border col-md-4">
         <h3 class="text-center"> Todo </h3>
-            <div v-for="task in Todo" :key="task.id" class="border p-2 m-1">
+            <div v-for="task in Todo" :key="task.id" class="d-flex flex-row list border p-2 m-1">
                 {{ task.name }}
+                <div class="deletelist" @click="removeTask">×</div>
             </div>
             <div class="m-1">
               <task-add
@@ -13,7 +14,7 @@
       </div>
       <div class="col border col-md-4">
         <h3 class="text-center"> Doing </h3>
-         <div v-for="task in Doing" :key="task.id" class="border p-2 m-1">
+         <div v-for="task in Doing" :key="task.id" class="d-flex flex-row list border p-2 m-1">
                 {{ task.name }}
             </div>
             <div class="m-1">
@@ -24,7 +25,7 @@
       </div>
       <div class="col border col-md-4">
         <h3 class="text-center"> Done </h3>
-        <div v-for="task in Done" :key="task.id" class="border p-2 m-1">
+        <div v-for="task in Done" :key="task.id" class="d-flex flex-row list border p-2 m-1">
                 {{ task.name }}
             </div>
             <div class="m-1">
@@ -79,6 +80,14 @@ export default{
     },
 
   },
+  // methods:{
+  //   removeTask:function(){
+  //     if(confirm('本当にこのタスクを削除しますか？')){
+  //       this.$store.dispatch('tutorial/removeTask',{ 
+  //       id:task.id })
+  //     }
+  //   },
+  // // }
 }
 
 </script>

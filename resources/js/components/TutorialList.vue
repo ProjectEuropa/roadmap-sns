@@ -25,7 +25,7 @@ export default{
   },
   methods:{
     removeTutorial:function(){
-      if(confirm('本当にこのリストを削除しますか？')){
+      if(confirm('本当にこの教材を削除しますか？')){
         this.$store.dispatch('tutorial/removeTutorial',{ 
         id:this.id,
         listIndex:this.listIndex })
