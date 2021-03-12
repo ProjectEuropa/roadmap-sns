@@ -12,15 +12,15 @@ use Illuminate\Support\Facades\Auth;
 class TutorialController extends Controller
 {
     public function index(){
-        $tutorials = Auth::user()->tutorials()->get()->sortByDesc('created_at');
+        $tutorials = Auth::user()->tutorials()->orderBy('created_at')->get();
 
         $first_tutorial = Auth::user()->tutorials()->first(); //今後、もし教材を持っていなかったら別画面を表示する処理を追加する。
 
-        $tasks = Task::where('tutorial_id',$first_tutorial->id)->get()->sortByDesc('created_at');
+        $tasks = Task::where('tutorial_id',$first_tutorial->id)->orderBy('created_at')->get();
 
         return view('tutorials.index',[
         'tutorials' => $tutorials,
-        'tasks' => $tasks
+        'tasks' => $tasks,
         ]);
     }
 
@@ -32,7 +32,7 @@ class TutorialController extends Controller
         $tutorial->save();
 
         //新しいtutorialsを返す
-        $tutorials = Auth::user()->tutorials()->get()->sortByDesc('created_at');
+        $tutorials = Auth::user()->tutorials()->orderBy('created_at')->get();
 
         return [
             'tutorials' => $tutorials,
@@ -43,7 +43,7 @@ class TutorialController extends Controller
         $tutorial->delete();
 
         //新しいtutorialsを返す
-        $tutorials = Auth::user()->tutorials()->get()->sortByDesc('created_at');
+        $tutorials = Auth::user()->tutorials()->orderBy('created_at')->get();
 
         return [
             'tutorials' => $tutorials,
