@@ -17,12 +17,12 @@
 
 <script>
 export default {
-  // props: {
-  //   listIndex: {
-  //     type: Number,
-  //     required: true,
-  //   }
-  // },
+  props: {
+    status: {
+      type: Number,
+      required: true,
+    }
+  },
   data: function() {
     return {
       name: '',
@@ -49,7 +49,7 @@ export default {
     this.isEditing = false
   },
   addTaskToList: function() {
-    this.$store.dispatch('task/addtask', { name: this.name })
+    this.$store.dispatch('task/addtask', { name: this.name,status: this.status })
       this.name = ''
    }
   }

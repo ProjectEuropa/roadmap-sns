@@ -15,16 +15,24 @@ class TaskController extends Controller
         $task->name = $request->name;
         $task->tutorial_id = 1;
         $task->order = 1;
-        $task->status = 1;
+        $task->status = $request->status;
         $task->save();
 
         // $tutorials = Auth::user()->tutorials()->get()->sortByDesc('created_at');
 
         // $tasks = $tutorials()->tasks()->get();
 
-        //$tutorials = Auth::user()->tutorials()->tasks()->get()->sortByDesc('created_at');
+        $tasks = Task::where('tutorial_id',$task->tutorial_id)->orderBy('created_at')->get();
 
-        $tasks = Task::all()->sortByDesc('created_at');
+        return [
+            'tasks' => $tasks,
+        ];
+    }
+
+    public function destroy(Task $task){
+        $task->delete();
+
+        $tasks = Task::where('tutorial_id',$task->tutorial_id)->orderBy('created_at')->get();
 
         return [
             'tasks' => $tasks,

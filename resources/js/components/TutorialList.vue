@@ -20,13 +20,12 @@ export default{
     },
     listIndex:{
       type:Number,
-      // type:String,
       required:true
     }
   },
   methods:{
     removeTutorial:function(){
-      if(confirm('本当にこのリストを削除しますか？')){
+      if(confirm('本当にこの教材を削除しますか？')){
         this.$store.dispatch('tutorial/removeTutorial',{ 
         id:this.id,
         listIndex:this.listIndex })

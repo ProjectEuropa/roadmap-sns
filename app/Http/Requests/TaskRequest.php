@@ -25,6 +25,7 @@ class TaskRequest extends FormRequest
     {
         return [
             'name' => 'required|max:30',
+            'status' => 'required'
         ];
     }
 
@@ -32,6 +33,7 @@ class TaskRequest extends FormRequest
     {
         return [
             'name' => 'タスク名',
+            'status' => '状態',
         ];
     }
 }
