@@ -20,7 +20,6 @@ export default{
     },
     listIndex:{
       type:Number,
-      // type:String,
       required:true
     }
   },
