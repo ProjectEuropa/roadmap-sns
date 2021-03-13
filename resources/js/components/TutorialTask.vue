@@ -6,6 +6,7 @@
     
     <task
       :initialTasks="initialTasks"
+      :currentTutorialId="currentTutorialId"
     />
   </div>
 </template>
@@ -28,9 +29,14 @@ export default {
       type:Array,
       default:[]
     },
-    initial_tutorial_id:{
+    initialTutorialId:{
       type:Number,
     },
+  },
+  data(){
+    return {
+      currentTutorialId:this.initialTutorialId,
+    }
   }
 }
 </script>

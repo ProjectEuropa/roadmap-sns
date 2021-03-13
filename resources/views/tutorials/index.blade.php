@@ -8,7 +8,7 @@
     <tutorial-task
     :initial-tutorials='@json($tutorials)'
     :initial-tasks='@json($tasks)'
-    :initial_tutorial_id='@json($first_tutorial_id)'
+    :initial-tutorial-id='@json($first_tutorial_id)'
     >
     </tutorial-task>  
 
