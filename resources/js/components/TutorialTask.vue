@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import Tutorial from './Tutorial.vue'
-import Task from './Task.vue'
+import Tutorial from './Tutorial/Tutorial.vue'
+import Task from './Task/Task.vue'
 
 export default {
   components:{
