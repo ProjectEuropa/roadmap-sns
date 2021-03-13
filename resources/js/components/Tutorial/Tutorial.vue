@@ -1,4 +1,5 @@
 <template>
+ <div class="border p-3 mt-1">
   <div class="d-flex flex-row">
     <tutorial-list v-for="(list, index) in lists"
     :key="list.id"
@@ -10,6 +11,7 @@
       <tutorial-add/>
     </div>
   </div>
+ </div>
 </template>
 
 <script>
@@ -23,14 +25,14 @@ export default {
     TutorialList,
   },
   props: {
-    initialTitle:{
+    initialTutorials:{
       type:Array,
       default:[]
     },
   },
   data(){
     return {
-      getLists:this.initialTitle,
+      getLists:this.initialTutorials,
     }
   },
   mounted: function () {

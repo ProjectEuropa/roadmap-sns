@@ -15,7 +15,7 @@ class TutorialsTableSeeder extends Seeder
     {
         $user = DB::table('users')->where('email','guest@guest.com')->first();
 
-        $titles = ['コンピュータサイエンス基礎','Linux基礎','HTML/CSS基礎'];
+        $titles = ['コンピュータサイエンス基礎','HTML/CSS基礎','PHP基礎'];
         $counter = 0;
 
         foreach($titles as $title){

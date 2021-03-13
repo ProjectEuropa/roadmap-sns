@@ -55,6 +55,9 @@ export default{
       type:Array,
       default:[]
     },
+    currentTutorialId:{
+      type:Number,
+    },
   },
   data(){
     return {
@@ -68,6 +71,11 @@ export default{
     ...mapState({
       tasks: state => state.task.tasks
     }),
+    CurrentTasks: function(){
+      return this.tasks.filter(function(task){
+        return task.tutorial_id === this.currentTutorialId
+      })
+    },
     Todo: function(){
       return this.tasks.filter(function(task){
         return task.status === 1
