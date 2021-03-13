@@ -21,6 +21,7 @@ class TutorialController extends Controller
         return view('tutorials.index',[
         'tutorials' => $tutorials,
         'tasks' => $tasks,
+        'first_tutorial_id' => $first_tutorial->id,
         ]);
     }
 

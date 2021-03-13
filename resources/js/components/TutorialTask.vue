@@ -28,6 +28,9 @@ export default {
       type:Array,
       default:[]
     },
+    initial_tutorial_id:{
+      type:Number,
+    },
   }
 }
 </script>
