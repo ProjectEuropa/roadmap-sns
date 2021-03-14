@@ -1,7 +1,9 @@
 <template>
-  <div class="list border p-2 mr-1 align-top">
+  <div class="tutorial-list mr-1 align-top ">
+    <button class="btn btn-outline-dark">
       <p class="m-1 pr-5">{{ title }}</p>
       <div class="deletelist" @click="removeTutorial">×</div>
+    </button>
   </div>
 
 </template>

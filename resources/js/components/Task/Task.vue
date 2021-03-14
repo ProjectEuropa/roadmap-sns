@@ -55,9 +55,6 @@ export default{
       type:Array,
       default:[]
     },
-    currentTutorialId:{
-      type:Number,
-    },
   },
   data(){
     return {
@@ -69,25 +66,26 @@ export default{
   },
   computed: {
     ...mapState({
-      tasks: state => state.task.tasks
+      tasks: state => state.task.tasks,
+      current_tutorial_id: state => state.tutorial.current_tutorial_id,
     }),
     CurrentTasks: function(){
       return this.tasks.filter(function(task){
-        return task.tutorial_id === this.currentTutorialId
+        return task.tutorial_id === 2 //this.currentTutorialId
       })
     },
     Todo: function(){
-      return this.tasks.filter(function(task){
+      return this.CurrentTasks.filter(function(task){
         return task.status === 1
       })
     },
     Doing: function(){
-      return this.tasks.filter(function(task){
+      return this.CurrentTasks.filter(function(task){
         return task.status === 2
       })
     },
     Done: function(){
-      return this.tasks.filter(function(task){
+      return this.CurrentTasks.filter(function(task){
         return task.status === 3
       })
     },

@@ -1,8 +1,12 @@
 const state = { 
   lists:[],
+  current_tutorial_id:0,
 }
 
 const mutations = {
+  initialTutorialId(state, payload){
+    state.current_tutorial_id = payload
+  },
   initiallist(state, payload){
     state.lists = payload
   },
@@ -15,6 +19,9 @@ const mutations = {
 }
 
 const actions = {
+  initialTutorialId(context, payload){
+    context.commit('initialTutorialId',payload)
+  },
   async initiallist(context, payload){
     await context.commit('initiallist',payload)
   },

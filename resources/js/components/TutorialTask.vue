@@ -6,7 +6,6 @@
     
     <task
       :initialTasks="initialTasks"
-      :currentTutorialId="currentTutorialId"
     />
   </div>
 </template>
@@ -37,6 +36,9 @@ export default {
     return {
       currentTutorialId:this.initialTutorialId,
     }
-  }
+  },
+  mounted:function(){
+    this.$store.dispatch('tutorial/initialTutorialId',this.currentTutorialId)
+  },
 }
 </script>
