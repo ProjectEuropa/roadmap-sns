@@ -70,8 +70,8 @@ export default{
       current_tutorial_id: state => state.tutorial.current_tutorial_id,
     }),
     CurrentTasks: function(){
-      return this.tasks.filter(function(task){
-        return task.tutorial_id === 2 //this.currentTutorialId
+      return this.tasks.filter((task) => {
+        return task.tutorial_id === this.current_tutorial_id
       })
     },
     Todo: function(){
