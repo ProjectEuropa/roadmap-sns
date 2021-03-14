@@ -32,13 +32,8 @@ export default {
       type:Number,
     },
   },
-  data(){
-    return {
-      currentTutorialId:this.initialTutorialId,
-    }
-  },
   mounted:function(){
-    this.$store.dispatch('tutorial/initialTutorialId',this.currentTutorialId)
+    this.$store.dispatch('tutorial/initialTutorialId',this.initialTutorialId)
   },
 }
 </script>
