@@ -1,6 +1,7 @@
 <template>
   <div class="tutorial-list mr-1 align-top ">
-    <button class="btn btn-outline-dark">
+    <button class="btn btn-outline-dark"
+    @click="changeCurrentTutorialId">
       <p class="m-1 pr-5">{{ title }}</p>
       <div class="deletelist" @click="removeTutorial">×</div>
     </button>
@@ -32,6 +33,9 @@ export default{
         id:this.id,
         listIndex:this.listIndex })
       }
+    },
+    changeCurrentTutorialId:function(){
+      this.$store.dispatch('tutorial/changeCurrentTutorialId',{id:this.id})
     },
   }
 }

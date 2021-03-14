@@ -16,6 +16,9 @@ const mutations = {
   removeTutorial(state, payload) {
     state.lists = payload.tutorials
   },
+  changeCurrentTutorialId(state, payload){
+    state.current_tutorial_id = payload.id
+  }
 }
 
 const actions = {
@@ -34,6 +37,9 @@ const actions = {
 
     context.commit('removeTutorial', response.data)
   },
+  changeCurrentTutorialId(context, payload){
+    context.commit('changeCurrentTutorialId', payload)
+  }
 }
 
 export default {
