@@ -1,6 +1,7 @@
 <template>
   <div class="tutorial-list mr-1 align-top ">
-    <button class="btn btn-outline-dark"
+    <button class="btn"
+    :class="[currentTutorial ? 'btn-primary' : 'btn-outline-dark']"
     @click="changeCurrentTutorialId">
       <p class="m-1 pr-5">{{ title }}</p>
       <div class="deletelist" @click="removeTutorial">×</div>
@@ -10,6 +11,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 
 export default{
   props:{
@@ -37,6 +39,14 @@ export default{
     changeCurrentTutorialId:function(){
       this.$store.dispatch('tutorial/changeCurrentTutorialId',{id:this.id})
     },
+  },
+  computed:{
+    ...mapState({
+      current_tutorial_id: state => state.tutorial.current_tutorial_id
+    }),
+    currentTutorial(){
+      return this.id === this.current_tutorial_id
+    }
   }
 }
 
