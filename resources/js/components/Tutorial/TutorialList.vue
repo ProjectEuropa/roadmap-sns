@@ -3,7 +3,7 @@
     <button class="btn"
     :class="[displayTutorial ? 'btn-primary' : 'btn-outline-dark']"
     @click="changeDisplayTutorialId">
-      <p class="m-1 pr-5">{{ title }}</p>
+      <p class="m-1 pr-5 text-nowrap">{{ title }}</p>
       <div class="deletelist" @click="removeTutorial">×</div>
     </button>
   </div>
