@@ -38,7 +38,17 @@ class TaskController extends Controller
     public function destroy(Task $task){
         $task->delete();
 
-        $tasks = Task::where('tutorial_id',$task->tutorial_id)->orderBy('created_at')->get();
+        $tutorials = Auth::user()->tutorials()->orderBy('created_at')->get();
+
+        $tasks = [];
+
+        foreach($tutorials as $tutorial){
+            $temp_tasks = Task::where('tutorial_id',$tutorial->id)->orderBy('created_at')->get()->toArray();
+
+            for($i = 0;$i < count($temp_tasks);$i++){
+                array_push($tasks,$temp_tasks[$i]);
+            }
+        }
 
         return [
             'tasks' => $tasks,
