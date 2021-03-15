@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   props: {
     status: {
@@ -39,7 +41,10 @@ export default {
     },
     nameExists(){
       return this.name.length > 0
-    }
+    },
+    ...mapState({
+      display_tutorial_id: state => state.tutorial.display_tutorial_id
+    }),
   },
   methods: {
   startEditing: function(){
@@ -49,7 +54,7 @@ export default {
     this.isEditing = false
   },
   addTaskToList: function() {
-    this.$store.dispatch('task/addtask', { name: this.name,status: this.status })
+    this.$store.dispatch('task/addtask', { name: this.name,status: this.status,tutorial_id:this.display_tutorial_id })
       this.name = ''
    }
   }
