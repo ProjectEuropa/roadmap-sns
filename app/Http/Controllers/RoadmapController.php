@@ -14,6 +14,11 @@ class RoadmapController extends Controller
         return view('roadmaps.index',['roadmaps' => $roadmaps ]);
     }
 
+    public function create()
+    {
+        return view('roadmaps.create');
+    }
+
     public function like(Request $request,Roadmap $roadmap)
     {
         $roadmap->likes()->detach($request->user()->id);

@@ -11,9 +11,13 @@
 |
 */
 
+use App\Http\Controllers\RoadmapController;
+
 Auth::routes();
 Route::get('/login/guest','Auth\LoginController@authenticate');
 Route::get('/','RoadmapController@index');
+
+Route::get('roadmaps/create','RoadmapController@create')->name('roadmaps.create')->middleware('auth');
 
 Route::get('/tutorials', 'TutorialController@index')->name('tutorials.index')->middleware('auth');
 Route::post('/tutorials/store', 'TutorialController@store')->middleware('auth');
