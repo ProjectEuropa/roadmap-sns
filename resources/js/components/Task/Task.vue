@@ -1,9 +1,9 @@
 <template>
   <div class="row mt-2">
-      <div class="col border col-md-4">
+      <div class="col col-md-3.8 border mr-2 bg-color">
         <h3 class="text-center"> Todo </h3>
         <p>やることタスクの数：{{Todo.length}}</p>
-          <div v-for="task in Todo" :key="task.id" class="d-flex flex-row list border p-2 m-1">
+          <div v-for="task in Todo" :key="task.id" class="d-flex flex-row list border p-2 m-2">
               {{ task.name }}
               <div class="deletelist" @click="removeTask(task)">×</div>
           </div>
@@ -13,10 +13,10 @@
             />
           </div>
       </div>
-      <div class="col border col-md-4">
+      <div class="col col-md-3.8 border mr-2 bg bg-color">
         <h3 class="text-center"> Doing </h3>
         <p>実施中タスクの数：{{Doing.length}}</p>
-         <div v-for="task in Doing" :key="task.id" class="d-flex flex-row list border p-2 m-1">
+         <div v-for="task in Doing" :key="task.id" class="d-flex flex-row list border p-2 m-2">
                 {{ task.name }}
                 <div class="deletelist" @click="removeTask(task)">×</div>
             </div>
@@ -26,10 +26,10 @@
               />
             </div>
       </div>
-      <div class="col border col-md-4">
+      <div class="col col-md-3.8 border mr-2 bg bg-color">
         <h3 class="text-center"> Done </h3>
         <p>完了タスクの数：{{Done.length}}</p>
-        <div v-for="task in Done" :key="task.id" class="d-flex flex-row list border p-2 m-1">
+        <div v-for="task in Done" :key="task.id" class="d-flex flex-row list border p-2 m-2">
                 {{ task.name }}
                 <div class="deletelist" @click="removeTask(task)">×</div>
             </div>

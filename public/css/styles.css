@@ -8,9 +8,11 @@
     position: relative;
     display: inline-block;
     align-items: flex-start;
-    background-color: #e0e0e0;
+    background-color: white;
     border: solid #ddd 1px;
-    color: gray;
+    /* color: gray; */
+    border-radius: 5px;
+    box-shadow: 0px 1px;
 }
 
 .listheader {
@@ -48,4 +50,8 @@
 
 .active .text-input {
     background-color: #fff;
+}
+
+.bg-color {
+    background-color: #ebecf0;
 }
