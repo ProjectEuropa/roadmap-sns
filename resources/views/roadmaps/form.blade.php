@@ -11,7 +11,7 @@
 
 <div class="md-form">
   <label for="estimated_time">学習時間目安(単位：時間)</label>
-  <input type="number" name="estimated_time" id="estimated_time" class="form-control" required value="{{ old('estimated_time') }}" min="1">
+  <input type="number" name="estimated_time" id="estimated_time" class="form-control" required value="{{ old('estimated_time') }}" min="1" max="300">
 </div>
 
 <div class="form-group">
