@@ -25,6 +25,7 @@ class RoadmapRequest extends FormRequest
     {
         return [
             'title' => 'required|max:50',
+            'tutorial-titles' => 'required|max:30',
             'body' => 'required|max:500',
             'estimated_time' => 'required|max:300',
             'level' => 'required|max:3',
@@ -35,6 +36,7 @@ class RoadmapRequest extends FormRequest
     {
         return [
             'title' => 'ロードマップ名',
+            'tutorial-titles' => '教材名',
             'body' => '説明',
             'estimated_time' => '学習時間目安',
             'level' => '学習レベル',
