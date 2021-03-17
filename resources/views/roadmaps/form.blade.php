@@ -4,6 +4,8 @@
   <input type="text" name="title" id="title" class="form-control" required value="{{ old('title') }}">
 </div>
 
+<roadmap-tutorial></roadmap-tutorial>
+
 <div class="form-group">
   <label></label>
   <textarea name="body" class="form-control" required rows="8" placeholder="説明">{{ old('body') }}</textarea>
