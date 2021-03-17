@@ -1,9 +1,10 @@
 <template>
  <div class="border p-3 mt-1 tutorial">
   <div class="d-flex flex-row">
+    <input type="hidden" name="tutorial-titles" :value="lists" required>
     <roadmap-tutorial-list v-for="(list, index) in lists"
     :key="list.id"
-    :title="list.title"
+    :title="list"
     :listIndex="index"
     />
     <div class="p-2 mr-1">
@@ -32,9 +33,9 @@ export default {
   //   this.$store.dispatch('tutorial/initiallist',this.getLists)
   // },
   computed:{
-  ...mapState({
+    ...mapState({
       lists: state => state.roadmap.lists
-  }),
+    }),
   },
 }
 

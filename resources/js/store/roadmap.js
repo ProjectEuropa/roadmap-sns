@@ -4,7 +4,7 @@ const state = {
 
 const mutations = {
   addlist(state, payload) {
-    state.lists.push({ title:payload.title })
+    state.lists.push( payload.title )
   },
   removeTutorial(state, payload) {
     state.lists = payload.tutorials
