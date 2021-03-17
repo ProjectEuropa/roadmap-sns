@@ -1,3 +1,7 @@
+.tutorial {
+    overflow-x: scroll;
+}
+
 .tutorial-list {
     position: relative;
     display: inline-block;

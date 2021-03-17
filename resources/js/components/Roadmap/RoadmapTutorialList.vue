@@ -1,8 +1,8 @@
 <template>
   <div class="tutorial-list mr-1 align-top ">
+    <!-- <input type="hidden" name="title" :value="title"> -->
     <button class="btn"
-    :class="[displayTutorial ? 'btn-primary' : 'btn-outline-dark']"
-    @click="changeDisplayTutorialId">
+    >
       <p class="m-1 pr-5 text-nowrap">{{ title }}</p>
       <div class="deletelist" @click="removeTutorial">×</div>
     </button>
@@ -11,14 +11,9 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
 
 export default{
   props:{
-    id:{
-      type:Number,
-      required:true
-    },
     title:{
       type:String,
       required:true
@@ -32,22 +27,10 @@ export default{
     removeTutorial:function(){
       if(confirm('本当にこの教材を削除しますか？')){
         this.$store.dispatch('tutorial/removeTutorial',{ 
-        id:this.id,
         listIndex:this.listIndex })
       }
     },
-    changeDisplayTutorialId:function(){
-      this.$store.dispatch('tutorial/changeDisplayTutorialId',{id:this.id})
-    },
   },
-  computed:{
-    ...mapState({
-      display_tutorial_id: state => state.tutorial.display_tutorial_id
-    }),
-    displayTutorial(){
-      return this.id === this.display_tutorial_id
-    }
-  }
 }
 
 </script>

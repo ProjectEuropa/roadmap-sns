@@ -1,5 +1,5 @@
 <template>
- <div class="border p-3 mt-1">
+ <div class="border p-3 mt-1 tutorial">
   <div class="d-flex flex-row">
     <tutorial-list v-for="(list, index) in lists"
     :key="list.id"
