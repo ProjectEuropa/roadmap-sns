@@ -1,6 +1,5 @@
 <template>
   <div class="tutorial-list mr-1 align-top ">
-    <!-- <input type="hidden" name="title" :value="title"> -->
     <button class="btn"
     >
       <p class="m-1 pr-5 text-nowrap">{{ title }}</p>
