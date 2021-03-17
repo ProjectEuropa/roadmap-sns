@@ -1,7 +1,7 @@
 <template>
  <div class="border p-3 mt-1 tutorial">
   <div class="d-flex flex-row">
-    <input type="hidden" name="tutorial-titles" :value="lists" required>
+    <input type="hidden" name="tutorial_titles" :value="lists" required>
     <roadmap-tutorial-list v-for="(list, index) in lists"
     :key="list.id"
     :title="list"
@@ -36,6 +36,9 @@ export default {
     ...mapState({
       lists: state => state.roadmap.lists
     }),
+    // listsJson(){
+    //   return JSON.stringify(this.lists)
+    // },
   },
 }
 
