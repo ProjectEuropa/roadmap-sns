@@ -17,14 +17,12 @@
 <script>
 import RoadmapTutorialAdd from './RoadmapTutorialAdd'
 import RoadmapTutorialList from './RoadmapTutorialList'
-import RoadmapTask from './RoadmapTask'
 import { mapState } from 'vuex'
 
 export default {
   components:{
     RoadmapTutorialAdd,
     RoadmapTutorialList,
-    RoadmapTask,
   },
   // data(){
   //   return {
