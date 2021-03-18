@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-for="task in tasks" :key="task.id" class="d-flex flex-row list border p-2 m-2">
-        {{ task.name }}
+        {{ task }}
         <div class="deletelist" @click="removeTask(task)">×</div>
     </div>
     <div class="m-1">
