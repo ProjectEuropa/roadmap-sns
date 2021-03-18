@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Roadmap;
 use App\RoadmapTutorial;
+use App\RoadmapTutorialTask;
 use App\Http\Requests\RoadmapRequest;
 use Illuminate\Http\Request;
 
@@ -31,7 +32,7 @@ class RoadmapController extends Controller
         $roadmap->save();
 
 
-        foreach(json_decode($request->tutorial_titles) as $tutorial_title){
+        foreach(json_decode($request->tutorial_task_names) as $tutorial_title){
             $roadmap_tutorial = new RoadmapTutorial();
 
             $roadmap_tutorial->title = $tutorial_title->title;
@@ -39,6 +40,15 @@ class RoadmapController extends Controller
             $roadmap_tutorial->roadmap_id = Roadmap::max('id');
 
             $roadmap_tutorial->save();
+
+            foreach($tutorial_title->tasks as $tasks){
+                $roadmap_tutorial_task = new RoadmapTutorialTask();
+
+                $roadmap_tutorial_task->name = $tasks;
+                $roadmap_tutorial_task->tutorial_id = RoadmapTutorial::max('id');
+                
+                $roadmap_tutorial_task->save();
+            }
         }
 
         return redirect()->route('roadmaps.index');
