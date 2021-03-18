@@ -4,10 +4,13 @@ const state = {
 
 const mutations = {
   addlist(state, payload) {
-    state.lists.push( payload.title )
+    state.lists.push( {title:payload.title,tasks:[]} )
   },
   removeTutorial(state, payload) {
     state.lists = payload.tutorials
+  },
+  addtask(state, payload){
+    // state.tasks = payload.name;
   },
 }
 
@@ -17,6 +20,9 @@ const actions = {
   },
   removeTutorial(context, payload) {
     context.commit('removeTutorial', payload)
+  },
+  addtask(context, payload){
+    context.commit('addtask', payload)
   },
 }
 

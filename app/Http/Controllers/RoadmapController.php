@@ -31,10 +31,10 @@ class RoadmapController extends Controller
         $roadmap->save();
 
 
-        foreach(explode(',', $request->tutorial_titles) as $tutorial_title){
+        foreach(json_decode($request->tutorial_titles) as $tutorial_title){
             $roadmap_tutorial = new RoadmapTutorial();
 
-            $roadmap_tutorial->title = $tutorial_title;
+            $roadmap_tutorial->title = $tutorial_title->title;
             $roadmap_tutorial->user_id = $request->user()->id;
             $roadmap_tutorial->roadmap_id = Roadmap::max('id');
 

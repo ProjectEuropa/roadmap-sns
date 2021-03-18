@@ -1,12 +1,16 @@
 <template>
  <div class="border p-3 mt-1 tutorial">
   <div class="d-flex flex-row">
-    <input type="hidden" name="tutorial_titles" :value="lists" required>
+    <input type="hidden" name="tutorial_titles" :value="listsJson" required>
     <roadmap-tutorial-list v-for="(list, index) in lists"
     :key="list.id"
-    :title="list"
+    :title="list.title"
     :listIndex="index"
     />
+    <!-- <roadmap-task v-for="(list, index) in lists"
+    :key="list.id"
+    :listIndex="index"
+    /> -->
     <div class="p-2 mr-1">
       <roadmap-tutorial-add/>
     </div>
@@ -17,12 +21,14 @@
 <script>
 import RoadmapTutorialAdd from './RoadmapTutorialAdd'
 import RoadmapTutorialList from './RoadmapTutorialList'
+import RoadmapTask from './RoadmapTask'
 import { mapState } from 'vuex'
 
 export default {
   components:{
     RoadmapTutorialAdd,
     RoadmapTutorialList,
+    RoadmapTask,
   },
   // data(){
   //   return {
@@ -36,9 +42,9 @@ export default {
     ...mapState({
       lists: state => state.roadmap.lists
     }),
-    // listsJson(){
-    //   return JSON.stringify(this.lists)
-    // },
+    listsJson(){
+      return JSON.stringify(this.lists)
+    },
   },
 }
 

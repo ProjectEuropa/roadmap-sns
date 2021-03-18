@@ -25,7 +25,7 @@ class RoadmapRequest extends FormRequest
     {
         return [
             'title' => 'required|max:50',
-            'tutorial_titles' => 'required|max:30',
+            'tutorial_titles' => 'required',
             'body' => 'required|max:500',
             'estimated_time' => 'required|max:300',
             'level' => 'required|max:3',
