@@ -10,7 +10,7 @@ const mutations = {
     state.lists = payload.tutorials
   },
   addtask(state, payload){
-    // state.tasks = payload.name;
+    state.lists[payload.listIndex].tasks.push(payload.name);
   },
 }
 

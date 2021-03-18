@@ -1,21 +1,17 @@
 <template>
  <div class="border p-3 mt-1 tutorial">
-  <div class="d-flex flex-row">
-    <input type="hidden" name="tutorial_titles" :value="listsJson" required>
+  <!-- <div class="d-flex flex-row"> -->
+    <input type="hidden" name="tutorial_task_names" :value="listsJson" required>
     <roadmap-tutorial-list v-for="(list, index) in lists"
     :key="list.id"
     :title="list.title"
     :listIndex="index"
     />
-    <!-- <roadmap-task v-for="(list, index) in lists"
-    :key="list.id"
-    :listIndex="index"
-    /> -->
     <div class="p-2 mr-1">
       <roadmap-tutorial-add/>
     </div>
   </div>
- </div>
+ <!-- </div> -->
 </template>
 
 <script>
