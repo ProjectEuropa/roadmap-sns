@@ -1,8 +1,12 @@
 const state = { 
   lists:[],
+  display_tutorial_id:0,
 }
 
 const mutations = {
+  initialTutorialId(state, payload){
+    state.display_tutorial_id = payload
+  },
   initiallist(state, payload){
     state.lists = payload
   },
@@ -12,9 +16,15 @@ const mutations = {
   removeTutorial(state, payload) {
     state.lists = payload.tutorials
   },
+  changeDisplayTutorialId(state, payload){
+    state.display_tutorial_id = payload.id
+  }
 }
 
 const actions = {
+  initialTutorialId(context, payload){
+    context.commit('initialTutorialId',payload)
+  },
   async initiallist(context, payload){
     await context.commit('initiallist',payload)
   },
@@ -27,6 +37,9 @@ const actions = {
 
     context.commit('removeTutorial', response.data)
   },
+  changeDisplayTutorialId(context, payload){
+    context.commit('changeDisplayTutorialId', payload)
+  }
 }
 
 export default {

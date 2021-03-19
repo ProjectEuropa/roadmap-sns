@@ -8,7 +8,7 @@
     @focusout= "finishEditing"
     >
     <button type="submit"
-    class="text-white border-0 rounded-pill"
+    class="text-white border-0 rounded-pill m-1"
     :class="[titleExists ? 'teal accent-4' : 'stylish-color']"
     v-if="isEditing || titleExists">
       教材を追加
@@ -40,7 +40,7 @@ export default {
 
   methods: {
     async addList() {
-      await this.$store.dispatch('tutorial/addlist',{title:this.title})
+      await this.$store.dispatch('roadmap/addlist',{title:this.title})
       this.title = ''
     },
     startEditing(){

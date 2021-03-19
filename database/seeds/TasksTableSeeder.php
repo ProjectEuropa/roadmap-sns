@@ -35,5 +35,46 @@ class TasksTableSeeder extends Seeder
             }
 
         }
+
+        //'HTML/CSS基礎'のタスク作成
+        $second_names = ['HTMLに触れてみよう！','CSSに触れてみよう！','レイアウトを作ろう！'];
+
+        foreach($second_names as $name){
+            DB::table('tasks')->insert([
+                'name' => $name,
+                'tutorial_id' => 2,
+                'order' => $counter+1,
+                'status' => $counter+1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
+            $counter++;
+
+            if($counter==3){
+                $counter = 0;
+            }
+
+        }
+
+
+        //PHP基礎のタスク作成
+        $third_names = ['PHPとは？','PHPの基礎を学ぼう','条件分岐'];
+
+        foreach($third_names as $name){
+            DB::table('tasks')->insert([
+                'name' => $name,
+                'tutorial_id' => 3,
+                'order' => $counter+1,
+                'status' => $counter+1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
+            $counter++;
+
+            if($counter==3){
+                $counter = 0;
+            }
+
+        }
     }
 }

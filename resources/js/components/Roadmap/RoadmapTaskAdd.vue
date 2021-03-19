@@ -20,14 +20,15 @@
 </template>
 
 <script>
+
 export default {
-  // props: {
-  //   listIndex: {
-  //     type: Number,
-  //     required: true,
-  //   }
-  // },
-  data: function () {
+  props:{
+    listIndex:{
+      type:Number,
+      required:true,
+    },
+  },
+  data: function() {
     return {
       name: "",
       isEditing: false,
@@ -44,6 +45,9 @@ export default {
     nameExists() {
       return this.name.length > 0;
     },
+    nameExists(){
+      return this.name.length > 0
+    },
   },
   methods: {
     startEditing: function () {
@@ -57,5 +61,10 @@ export default {
       this.name = "";
     },
   },
-};
+  addTaskToList: function() {
+    this.$store.dispatch('roadmap/addtask', { name: this.name,listIndex:this.listIndex })
+      this.name = ''
+   }
+  }
+}
 </script>

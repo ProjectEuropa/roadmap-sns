@@ -13,20 +13,42 @@ class TaskController extends Controller
 {
     public function store(TaskRequest $request,Task $task){
         $task->name = $request->name;
-        $task->tutorial_id = 1;
+        $task->tutorial_id = $request->tutorial_id;
         $task->order = 1;
-        $task->status = 1;
+        $task->status = $request->status;
         $task->save();
 
-        // $tutorials = Auth::user()->tutorials()->get()->sortByDesc('created_at');
+        $tutorials = Auth::user()->tutorials()->orderBy('created_at')->get();
 
-        // $tasks = $tutorials()->tasks()->get();
+        $tasks = [];
 
-        //$tutorials = Auth::user()->tutorials()->tasks()->get()->sortByDesc('created_at');
-        $tutorials = Auth::user()->tutorials->task;
-        ddd($tutorials);
+        foreach($tutorials as $tutorial){
+            $temp_tasks = Task::where('tutorial_id',$tutorial->id)->orderBy('created_at')->get()->toArray();
 
-        $tasks = Task::all()->sortByDesc('created_at');
+            for($i = 0;$i < count($temp_tasks);$i++){
+                array_push($tasks,$temp_tasks[$i]);
+            }
+        }
+
+        return [
+            'tasks' => $tasks,
+        ];
+    }
+
+    public function destroy(Task $task){
+        $task->delete();
+
+        $tutorials = Auth::user()->tutorials()->orderBy('created_at')->get();
+
+        $tasks = [];
+
+        foreach($tutorials as $tutorial){
+            $temp_tasks = Task::where('tutorial_id',$tutorial->id)->orderBy('created_at')->get()->toArray();
+
+            for($i = 0;$i < count($temp_tasks);$i++){
+                array_push($tasks,$temp_tasks[$i]);
+            }
+        }
 
         return [
             'tasks' => $tasks,
