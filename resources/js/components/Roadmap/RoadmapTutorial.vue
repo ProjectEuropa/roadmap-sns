@@ -5,6 +5,7 @@
     <roadmap-tutorial-list v-for="(list, index) in lists"
     :key="list.id"
     :title="list.title"
+    :tasks="list.tasks"
     :listIndex="index"
     />
     <div class="p-2 mr-1">
