@@ -17,7 +17,7 @@ class CreateTutorialsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->bigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            // $table->foreign('user_id')->references('id')->on('users');
             $table->bigInteger('order');
             $table->bigInteger('status');
             $table->timestamps();

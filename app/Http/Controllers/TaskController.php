@@ -23,6 +23,8 @@ class TaskController extends Controller
         // $tasks = $tutorials()->tasks()->get();
 
         //$tutorials = Auth::user()->tutorials()->tasks()->get()->sortByDesc('created_at');
+        $tutorials = Auth::user()->tutorials->task;
+        ddd($tutorials);
 
         $tasks = Task::all()->sortByDesc('created_at');
 

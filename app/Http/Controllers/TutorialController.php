@@ -16,7 +16,12 @@ class TutorialController extends Controller
 
         $first_tutorial = Auth::user()->tutorials()->first(); //今後、もし教材を持っていなかったら別画面を表示する処理を追加する。
 
-        $tasks = Task::where('tutorial_id',$first_tutorial->id)->get()->sortByDesc('created_at');
+        // $tasks = Task::where('tutorial_id',$first_tutorial->id);
+        $tutorials = Auth::user()->tutorials;
+        foreach ($tutorials as $key => $tutorial) {
+            dd($tutorial->tasks);
+        }
+        die;
 
         return view('tutorials.index',[
         'tutorials' => $tutorials,

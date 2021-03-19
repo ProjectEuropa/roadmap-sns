@@ -18,7 +18,7 @@ class CreateRoadmapsTable extends Migration
             $table->string('title');
             $table->text('body');
             $table->bigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            // $table->foreign('user_id')->references('id')->on('users');
             $table->bigInteger('estimated_time');
             $table->bigInteger('level');
             $table->timestamps();
